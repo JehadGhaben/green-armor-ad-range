@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 440" role="img" aria-labelledby="title desc">
+<title id="title">GREEN ARMOR ACADEMY — Operation Directory</title>
+<desc id="desc">Minimal black, silver and emerald-green text banner for a directory-security laboratory.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#090D0B"/><stop offset="1" stop-color="#18211C"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#137F4E"/><stop offset="1" stop-color="#20B973"/></linearGradient>
+</defs>
+<rect width="1280" height="440" fill="url(#bg)"/>
+<rect x="72" y="71" width="7" height="296" rx="3.5" fill="url(#accent)"/>
+<path d="M101 71H1212M101 368H1212" stroke="#5D6B62" opacity=".32" stroke-width="1.3"/>
+<text x="114" y="124" fill="#27C27A" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" letter-spacing="4">GREEN ARMOR ACADEMY</text>
+<text x="114" y="224" fill="#F7FBF8" font-family="Inter,Arial,sans-serif" font-size="75" font-weight="800" letter-spacing="-1.3">OPERATION</text>
+<text x="114" y="306" fill="#F7FBF8" font-family="Inter,Arial,sans-serif" font-size="75" font-weight="800" letter-spacing="-1.3">DIRECTORY</text>
+<text x="119" y="347" fill="#B4C0B9" font-family="Inter,Arial,sans-serif" font-size="17" letter-spacing="2">ACTIVE DIRECTORY  /  DOCKER RANGE  /  4 CHALLENGES</text>
+<rect x="994" y="98" width="205" height="36" fill="none" stroke="#2B9C66" stroke-width="1.3" rx="18"/>
+<text x="1096" y="121" text-anchor="middle" fill="#C6DBD0" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="13" letter-spacing="2">LAB EDITION 01</text>
+<text x="1193" y="346" text-anchor="end" fill="#758A7D" font-family="Inter,Arial,sans-serif" font-size="15">JEHAD GHABEN</text>
+</svg>

@@ -1,0 +1,3 @@
+# The Python CLI depends only on the standard library.
+# Linux host: Python >= 3.9, Docker Engine and Docker Compose v2.
+# The lab's images install Samba and student tools at build time.

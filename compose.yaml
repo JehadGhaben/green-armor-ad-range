@@ -1,0 +1,54 @@
+# GREEN ARMOR ACADEMY — Operation Directory
+# Deliberately vulnerable, isolated training-only Active Directory.
+# Do not connect this network to a real or production domain.
+name: green-armor-ad-range
+services:
+  dc:
+    build: ./docker/dc
+    hostname: dc01
+    restart: "no"
+    mem_limit: 1g
+    pids_limit: 256
+    volumes:
+      - ad_etc:/etc/samba
+      - ad_data:/var/lib/samba
+      - ad_files:/srv/armor
+      - ./runtime/seed/scenario.json:/run/armor/scenario.json:ro
+    networks:
+      training:
+        aliases:
+          - dc
+          - dc01.armor.test
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 445 && nc -z 127.0.0.1 389 && test -f /var/lib/samba/.armor-ready"]
+      interval: 10s
+      timeout: 4s
+      retries: 24
+      start_period: 60s
+    security_opt:
+      - no-new-privileges:true
+  student:
+    build: ./docker/student
+    hostname: student
+    stdin_open: true
+    tty: true
+    command: ["sleep", "infinity"]
+    mem_limit: 512m
+    pids_limit: 128
+    depends_on:
+      dc:
+        condition: service_healthy
+    networks:
+      - training
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+networks:
+  training:
+    driver: bridge
+    internal: true
+volumes:
+  ad_etc:
+  ad_data:
+  ad_files:
